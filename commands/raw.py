@@ -57,4 +57,8 @@ author:
 EXAMPLES = '''
 # Bootstrap a legacy python 2.4 host
 - raw: yum -y install python-simplejson
+
+# Move a file on a remote Windows Server from one place to another
+- name: move config file
+  raw: CMD /C "move /y C:\mystuff\test\build.conf C:\app\config\build.conf"
 '''
