@@ -52,4 +52,10 @@ EXAMPLES = '''
 
 # A helpful reminder of what to look out for post-update.
 - pause: prompt="Make sure org.foo.FooOverload exception is not present"
+
+# Pause MUST have standard input open regardless of whether you just want to wait some amount of time
+# or if you want to prompt. If you want to run your playbook in the background using Linux "nohup", you will
+# need to do something like this to ensure that your pause statement, which is inside
+# of myscript.yml, does not fail (this is a Linux command prompt example)
+- $ nohup ansible-playbook myscript.yml 0</dev/null
 '''
